@@ -5,10 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+
+  { label: "SKILLS", href: "#skills" },
+  { label: "EXPERIENCE", href: "#experience" },
+  { label: "PROJECTS", href: "#projects" },
+  { label: "ABOUT", href: "#about" },
+  { label: "CONTACT", href: "#contact" },
 ];
 
 export default function Nav() {
@@ -46,11 +48,10 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-white/[0.06] shadow-lg shadow-black/20"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-white/[0.06] shadow-lg shadow-black/20"
+        : "bg-transparent"
+        }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6">
         {/* Logo */}
@@ -67,11 +68,10 @@ export default function Nav() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  activeSection === link.href.replace("#", "")
-                    ? "text-accent"
-                    : "text-text-secondary hover:text-foreground"
-                }`}
+                className={`text-sm font-medium transition-colors duration-200 ${activeSection === link.href.replace("#", "")
+                  ? "text-accent"
+                  : "text-text-secondary hover:text-foreground"
+                  }`}
               >
                 {link.label}
               </a>
@@ -106,11 +106,10 @@ export default function Nav() {
                   <a
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`block py-3 text-sm font-medium transition-colors ${
-                      activeSection === link.href.replace("#", "")
-                        ? "text-accent"
-                        : "text-text-secondary hover:text-foreground"
-                    }`}
+                    className={`block py-3 text-sm font-medium transition-colors ${activeSection === link.href.replace("#", "")
+                      ? "text-accent"
+                      : "text-text-secondary hover:text-foreground"
+                      }`}
                   >
                     {link.label}
                   </a>
