@@ -44,6 +44,23 @@ export default function Nav() {
     return () => observer.disconnect();
   }, []);
 
+  const handleMobileNavClick = (href: string) => {
+    const id = href.replace("#", "");
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    setActiveSection(id);
+    window.history.pushState(null, "", href);
+    setMobileOpen(false);
+
+    // Delay scroll so the menu exit animation doesn't block it
+    setTimeout(() => {
+      const headerOffset = 76;
+      const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+      window.scrollTo({ top, behavior: "smooth" });
+    }, 250);
+  };
+
   return (
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${scrolled
@@ -96,8 +113,9 @@ export default function Nav() {
         </a>
 
         <button
+          type="button"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="p-2 -mr-2 text-foreground md:hidden"
+          className="-mr-2 p-2 text-foreground md:hidden"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
         >
@@ -117,16 +135,16 @@ export default function Nav() {
             <ul className="flex flex-col gap-1 px-6 py-4">
               {links.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className={`block rounded-lg px-3 py-3 text-sm font-medium transition-colors ${activeSection === link.href.replace("#", "")
+                  <button
+                    type="button"
+                    onClick={() => handleMobileNavClick(link.href)}
+                    className={`block w-full rounded-lg px-3 py-3 text-left text-sm font-medium transition-colors ${activeSection === link.href.replace("#", "")
                       ? "bg-accent/[0.08] text-accent"
                       : "text-text-secondary hover:bg-white/[0.03] hover:text-foreground"
                       }`}
                   >
                     {link.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
