@@ -140,11 +140,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-32 relative">
+    <section id="contact" className="relative overflow-hidden py-24 sm:py-32">
       {/* Background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-accent/[0.04] blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 h-[300px] w-[360px] -translate-x-1/2 rounded-full bg-accent/[0.04] blur-[90px] pointer-events-none sm:h-[400px] sm:w-[600px] sm:blur-[120px]" />
 
-      <div ref={ref} className="relative mx-auto max-w-6xl px-6">
+      <div ref={ref} className="relative mx-auto max-w-6xl px-5 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -157,7 +157,7 @@ export default function Contact() {
               Contact
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
             Let&apos;s build something{" "}
             <span className="bg-gradient-to-r from-accent to-cyan-300 bg-clip-text text-transparent">
               sharp
@@ -169,7 +169,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="mt-12 grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
+        <div className="mt-12 grid items-start gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
           {/* Form */}
           <motion.form
             onSubmit={handleSubmit}
@@ -268,7 +268,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col justify-center"
+            className="flex flex-col"
           >
             <h3 className="text-lg font-bold text-foreground mb-6">
               Connect with me
@@ -285,13 +285,8 @@ export default function Contact() {
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent transition-colors group-hover:bg-accent/20">
                     <social.icon size={20} />
                   </div>
-                  <div>
-                    <div className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
-                      {social.label}
-                    </div>
-                    <div className="text-xs text-text-tertiary truncate max-w-[220px]">
-                      {social.href.replace("https://", "").replace("mailto:", "")}
-                    </div>
+                  <div className="min-w-0 text-sm font-semibold text-foreground transition-colors group-hover:text-accent">
+                    {social.label}
                   </div>
                 </a>
               ))}

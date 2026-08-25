@@ -31,7 +31,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="py-24 sm:py-32">
-      <div ref={ref} className="mx-auto max-w-6xl px-6">
+      <div ref={ref} className="mx-auto max-w-6xl px-5 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -43,7 +43,7 @@ export default function Skills() {
               Skills & Technologies
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
             Tools I{" "}
             <span className="bg-gradient-to-r from-accent to-cyan-300 bg-clip-text text-transparent">
               work with

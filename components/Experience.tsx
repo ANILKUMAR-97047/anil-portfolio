@@ -26,7 +26,7 @@ export default function Experience() {
 
   return (
     <section id="experience" className="py-24 sm:py-32">
-      <div ref={ref} className="mx-auto max-w-6xl px-6">
+      <div ref={ref} className="mx-auto max-w-6xl px-5 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -38,7 +38,7 @@ export default function Experience() {
               Work Experience
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
             Where I&apos;ve been{" "}
             <span className="bg-gradient-to-r from-accent to-cyan-300 bg-clip-text text-transparent">
               shipping code
@@ -55,7 +55,7 @@ export default function Experience() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="relative pl-8 pb-12 last:pb-0"
+              className="relative pb-12 pl-6 last:pb-0 sm:pl-8"
             >
               {/* Timeline dot & line */}
               <div className="absolute left-0 top-2 flex flex-col items-center">
@@ -69,7 +69,7 @@ export default function Experience() {
               <div className="rounded-xl border border-card-border bg-card-bg p-6 sm:p-8 transition-all duration-300 hover:border-accent/15 hover:bg-white/[0.04]">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
                   <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-foreground flex items-center gap-2">
+                    <h3 className="flex items-start gap-2 text-lg font-bold text-foreground sm:text-xl">
                       <Briefcase size={18} className="text-accent shrink-0" />
                       {exp.role}
                     </h3>
@@ -77,7 +77,7 @@ export default function Experience() {
                       <span className="font-medium text-foreground/80">
                         {exp.company}
                       </span>
-                      <span className="flex items-center gap-1">
+                      <span className="flex items-center gap-1 break-words">
                         <MapPin size={13} className="text-accent/60" />
                         {exp.location}
                       </span>

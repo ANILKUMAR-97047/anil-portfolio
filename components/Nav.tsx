@@ -52,7 +52,7 @@ export default function Nav() {
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6">
         {/* Logo */}
         <a
           href="#"

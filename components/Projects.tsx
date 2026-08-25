@@ -55,7 +55,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-24 sm:py-32">
-      <div ref={ref} className="mx-auto max-w-6xl px-6">
+      <div ref={ref} className="mx-auto max-w-6xl px-5 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -67,7 +67,7 @@ export default function Projects() {
               Projects
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
             Things I&apos;ve{" "}
             <span className="bg-gradient-to-r from-accent to-cyan-300 bg-clip-text text-transparent">
               built
@@ -93,7 +93,7 @@ export default function Projects() {
                 {/* Title row */}
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <div>
-                    <h3 className="text-lg font-bold text-foreground group-hover:text-accent transition-colors">
+                    <h3 className="break-words text-lg font-bold text-foreground transition-colors group-hover:text-accent">
                       {project.title}
                     </h3>
                     <span className="text-xs text-text-tertiary font-medium">
