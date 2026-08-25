@@ -144,7 +144,7 @@ export default function Contact() {
       {/* Background glow */}
       <div className="absolute bottom-0 left-1/2 h-[300px] w-[360px] -translate-x-1/2 rounded-full bg-accent/[0.04] blur-[90px] pointer-events-none sm:h-[400px] sm:w-[600px] sm:blur-[120px]" />
 
-      <div ref={ref} className="relative mx-auto max-w-6xl px-5 sm:px-6">
+      <div ref={ref} className="relative mx-auto max-w-[90%] px-5 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -176,7 +176,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-5"
+            className="space-y-5 rounded-xl border border-card-border bg-card-bg p-5 sm:p-6"
           >
             <div>
               <label
@@ -194,7 +194,7 @@ export default function Contact() {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="w-full rounded-lg border border-card-border bg-card-bg px-4 py-3 text-sm text-foreground placeholder:text-text-tertiary outline-none transition-all focus:border-accent/40 focus:ring-1 focus:ring-accent/20 disabled:opacity-50"
+                className="w-full rounded-lg border border-card-border bg-[#0d1117]/70 px-4 py-3 text-sm text-foreground placeholder:text-text-tertiary outline-none transition-all hover:border-white/15 focus:border-accent/40 focus:ring-1 focus:ring-accent/20 disabled:opacity-50"
                 placeholder="Your name"
               />
             </div>
@@ -214,7 +214,7 @@ export default function Contact() {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
-                className="w-full rounded-lg border border-card-border bg-card-bg px-4 py-3 text-sm text-foreground placeholder:text-text-tertiary outline-none transition-all focus:border-accent/40 focus:ring-1 focus:ring-accent/20 disabled:opacity-50"
+                className="w-full rounded-lg border border-card-border bg-[#0d1117]/70 px-4 py-3 text-sm text-foreground placeholder:text-text-tertiary outline-none transition-all hover:border-white/15 focus:border-accent/40 focus:ring-1 focus:ring-accent/20 disabled:opacity-50"
                 placeholder="your@email.com"
               />
             </div>
@@ -234,14 +234,14 @@ export default function Contact() {
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
-                className="w-full rounded-lg border border-card-border bg-card-bg px-4 py-3 text-sm text-foreground placeholder:text-text-tertiary outline-none transition-all resize-none focus:border-accent/40 focus:ring-1 focus:ring-accent/20 disabled:opacity-50"
+                className="w-full resize-none rounded-lg border border-card-border bg-[#0d1117]/70 px-4 py-3 text-sm text-foreground placeholder:text-text-tertiary outline-none transition-all hover:border-white/15 focus:border-accent/40 focus:ring-1 focus:ring-accent/20 disabled:opacity-50"
                 placeholder="Tell me about your project..."
               />
             </div>
             <button
               type="submit"
               disabled={isSubmitting}
-              className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-[#0a0a0f] transition-all duration-300 hover:bg-cyan-300 hover:shadow-lg hover:shadow-accent/25 active:scale-[0.97] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:bg-accent"
+              className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-[#0a0a0f] transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-lg hover:shadow-accent/25 active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:bg-accent cursor-pointer"
             >
               {isSubmitting ? (
                 <>
@@ -280,7 +280,7 @@ export default function Contact() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-4 rounded-xl border border-card-border bg-card-bg p-4 transition-all duration-300 hover:border-accent/20 hover:bg-accent/[0.04]"
+                  className="group flex items-center gap-4 rounded-xl border border-card-border bg-card-bg p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/20 hover:bg-accent/[0.04]"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent transition-colors group-hover:bg-accent/20">
                     <social.icon size={20} />

@@ -2,15 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 
 const links = [
-
-  { label: "SKILLS", href: "#skills" },
-  { label: "EXPERIENCE", href: "#experience" },
-  { label: "PROJECTS", href: "#projects" },
-  { label: "ABOUT", href: "#about" },
-  { label: "CONTACT", href: "#contact" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Nav() {
@@ -24,7 +23,6 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Intersection Observer for active section highlighting
   useEffect(() => {
     const sectionIds = links.map((l) => l.href.replace("#", ""));
     const observer = new IntersectionObserver(
@@ -48,41 +46,58 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-        ? "bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-white/[0.06] shadow-lg shadow-black/20"
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${scrolled
+        ? "border-b border-white/[0.08] bg-[#0a0a0f]/82 shadow-lg shadow-black/20 backdrop-blur-xl"
         : "bg-transparent"
         }`}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6">
-        {/* Logo */}
+      <nav className="mx-auto flex max-w-[90%] items-center justify-between px-5 py-4 sm:px-6">
         <a
           href="#"
-          className="text-xl font-bold tracking-tight text-foreground hover:text-accent transition-colors"
+          className="text-xl font-bold tracking-tight text-foreground transition-colors hover:text-accent"
         >
           Anil<span className="text-accent">.</span>
         </a>
 
-        {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className={`text-sm font-medium transition-colors duration-200 ${activeSection === link.href.replace("#", "")
-                  ? "text-accent"
-                  : "text-text-secondary hover:text-foreground"
-                  }`}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+        <ul className="hidden items-center gap-1 rounded-full border border-white/[0.06] bg-white/[0.025] p-1 md:flex">
+          {links.map((link) => {
+            const active = activeSection === link.href.replace("#", "");
+
+            return (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className={`relative block rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 ${active
+                    ? "text-accent"
+                    : "text-text-secondary hover:text-foreground"
+                    }`}
+                >
+                  {active && (
+                    <motion.span
+                      layoutId="active-nav-pill"
+                      className="absolute inset-0 rounded-full border border-accent/20 bg-accent/[0.06]"
+                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                    />
+                  )}
+                  <span className="relative z-10">{link.label}</span>
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
-        {/* Mobile Toggle */}
+        <a
+          href="/resume.pdf"
+          download="Anil_Kumar_Resume.pdf"
+          className="hidden items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.035] px-4 py-2 text-sm font-semibold text-foreground transition-all hover:border-accent/30 hover:bg-accent/[0.08] hover:text-accent lg:inline-flex"
+        >
+          <Download size={15} />
+          Resume
+        </a>
+
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-foreground p-2 -mr-2"
+          className="p-2 -mr-2 text-foreground md:hidden"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
         >
@@ -90,7 +105,6 @@ export default function Nav() {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -98,7 +112,7 @@ export default function Nav() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-[#0a0a0f]/95 backdrop-blur-xl border-b border-white/[0.06]"
+            className="border-b border-white/[0.06] bg-[#0a0a0f]/95 backdrop-blur-xl md:hidden"
           >
             <ul className="flex flex-col gap-1 px-6 py-4">
               {links.map((link) => (
@@ -106,9 +120,9 @@ export default function Nav() {
                   <a
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`block py-3 text-sm font-medium transition-colors ${activeSection === link.href.replace("#", "")
-                      ? "text-accent"
-                      : "text-text-secondary hover:text-foreground"
+                    className={`block rounded-lg px-3 py-3 text-sm font-medium transition-colors ${activeSection === link.href.replace("#", "")
+                      ? "bg-accent/[0.08] text-accent"
+                      : "text-text-secondary hover:bg-white/[0.03] hover:text-foreground"
                       }`}
                   >
                     {link.label}

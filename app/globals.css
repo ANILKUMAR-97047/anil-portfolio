@@ -40,7 +40,9 @@ body::before {
 }
 
 body {
-  background: var(--background);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.018), transparent 28rem),
+    var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   overflow-x: clip;
@@ -113,4 +115,13 @@ html {
   bottom: 0;
   width: 2px;
   background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
