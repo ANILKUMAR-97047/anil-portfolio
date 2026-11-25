@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Layers, LockKeyhole, ListChecks, Activity, Server, Compass, Zap, ShieldCheck, GraduationCap, Landmark } from "lucide-react";
+import { ExternalLink, Layers, Activity, Server, Compass, Zap, ShieldCheck, GraduationCap, Landmark } from "lucide-react";
 
 const projects = [
   {
@@ -76,24 +76,6 @@ const projects = [
     tech: ["React.js", "Tailwind CSS", "HTML", "CSS"],
     icon: Layers,
     liveUrl: "https://asian-film-academy.netlify.app/",
-  },
-  {
-    title: "Jobby App",
-    subtitle: "Authenticated job search",
-    description:
-      "Job search application with JWT authentication, protected routes, REST API integration, and persistent login state.",
-    tech: ["React.js", "JavaScript", "Bootstrap", "REST APIs", "JWT"],
-    icon: LockKeyhole,
-    liveUrl: "#",
-  },
-  {
-    title: "Todos Application",
-    subtitle: "Persistent task manager",
-    description:
-      "Todo application with complete CRUD interactions and browser local storage persistence for returning users.",
-    tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    icon: ListChecks,
-    liveUrl: "#",
   },
 ];
 
