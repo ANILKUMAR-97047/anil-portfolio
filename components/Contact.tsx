@@ -37,8 +37,8 @@ const socials = [
   },
   {
     label: "Email",
-    handle: "mak97047@gmail.com",
-    href: "mailto:mak97047@gmail.com",
+    handle: "anilmarapatla1423@gmail.com",
+    href: "mailto:anilmarapatla1423@gmail.com",
     icon: Mail,
   },
 ];
@@ -72,7 +72,7 @@ export default function Contact() {
 
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText("mak97047@gmail.com");
+      await navigator.clipboard.writeText("anilmarapatla1423@gmail.com");
       setCopied(true);
       toast.success("Email copied to clipboard!", {
         style: {
