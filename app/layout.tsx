@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Anil Kumar | Full Stack Developer",
   description:
-    "Portfolio of Anil Kumar — Full Stack Developer specialising in Node.js, NestJS, React, and MySQL. Building robust backend systems and clean, responsive interfaces.",
+    "Portfolio of Anil Kumar — Full Stack Developer specialising in Next.js, TypeScript, Node.js, NestJS, PostgreSQL, Supabase, MongoDB, Redis, and Docker.",
   openGraph: {
     title: "Anil Kumar | Full Stack Developer",
     description:
-      "Portfolio of Anil Kumar — Full Stack Developer specialising in Node.js, NestJS, React, and MySQL.",
+      "Portfolio of Anil Kumar — Full Stack Developer building scalable web apps with Next.js, TypeScript, Node.js, NestJS, PostgreSQL, and Supabase.",
     type: "website",
     locale: "en_US",
     siteName: "Anil Kumar Portfolio",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Anil Kumar | Full Stack Developer",
     description:
-      "Portfolio of Anil Kumar — Full Stack Developer specialising in Node.js, NestJS, React, and MySQL.",
+      "Portfolio of Anil Kumar — Full Stack Developer building scalable web apps with Next.js, TypeScript, Node.js, NestJS, PostgreSQL, and Supabase.",
   },
 };
 

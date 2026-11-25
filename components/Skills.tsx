@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { Code2, Database, ServerCog, ShieldCheck, Wrench } from "lucide-react";
+import { Code2, Database, Layers, ServerCog, ShieldCheck, Wrench } from "lucide-react";
 import { useRef } from "react";
 
 const skillGroups = [
@@ -15,13 +15,19 @@ const skillGroups = [
     title: "Backend",
     icon: ServerCog,
     accent: "from-sky-300/20 to-cyan-300/10",
-    skills: ["Node.js", "NestJS", "Microservices", "Express.js", "Socket.io", "REST APIs", "Swagger API", "Strapi.js"],
+    skills: ["Node.js", "NestJS", "Express.js", "REST APIs", "Strapi.js"],
   },
   {
     title: "Data & Cloud",
     icon: Database,
     accent: "from-teal-300/20 to-blue-300/10",
     skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Supabase", "Schema Design"],
+  },
+  {
+    title: "Architecture & APIs",
+    icon: Layers,
+    accent: "from-cyan-300/20 to-sky-300/10",
+    skills: ["Microservices", "Socket.io", "Redis Caching", "Swagger / OpenAPI", "System Design"],
   },
   {
     title: "Security",
@@ -43,7 +49,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="py-24 sm:py-32">
-      <div ref={ref} className="mx-auto max-w-[90%] px-5 sm:px-6">
+      <div ref={ref} className="mx-auto w-[90%] max-w-7xl px-5 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

@@ -68,7 +68,7 @@ export default function Nav() {
         : "bg-transparent"
         }`}
     >
-      <nav className="mx-auto flex max-w-[90%] items-center justify-between px-5 py-4 sm:px-6">
+      <nav className="mx-auto flex w-[90%] max-w-7xl items-center justify-between px-5 py-4 sm:px-6">
         <a
           href="#"
           className="text-xl font-bold tracking-tight text-foreground transition-colors hover:text-accent"
@@ -147,6 +147,17 @@ export default function Nav() {
                   </button>
                 </li>
               ))}
+              <li className="pt-2 mt-2 border-t border-white/[0.06]">
+                <a
+                  href="/resume.pdf"
+                  download="Anil_Kumar_Resume.pdf"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex w-full items-center justify-center gap-2 rounded-lg border border-accent/25 bg-accent/[0.08] px-4 py-2.5 text-sm font-semibold text-accent transition-colors hover:bg-accent/15"
+                >
+                  <Download size={15} />
+                  Download Resume
+                </a>
+              </li>
             </ul>
           </motion.div>
         )}

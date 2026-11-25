@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, type FormEvent } from "react";
-import { Send, Mail, Loader2, CheckCircle } from "lucide-react";
+import { Send, Mail, Loader2, CheckCircle, Copy, Check, MapPin, ArrowUpRight } from "lucide-react";
 import toast from "react-hot-toast";
 
 /* Brand icons removed from lucide-react — using inline SVGs */
@@ -25,16 +25,19 @@ function LinkedinIcon({ size = 20 }: { size?: number }) {
 const socials = [
   {
     label: "GitHub",
+    handle: "@ANILKUMAR-97047",
     href: "https://github.com/ANILKUMAR-97047",
     icon: GithubIcon,
   },
   {
     label: "LinkedIn",
+    handle: "anil-kumar-marapatla",
     href: "https://linkedin.com/in/anil-kumar-marapatla-0414b0281",
     icon: LinkedinIcon,
   },
   {
     label: "Email",
+    handle: "mak97047@gmail.com",
     href: "mailto:mak97047@gmail.com",
     icon: Mail,
   },
@@ -65,6 +68,25 @@ export default function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("mak97047@gmail.com");
+      setCopied(true);
+      toast.success("Email copied to clipboard!", {
+        style: {
+          background: "#0f0f1a",
+          color: "#e4e4e7",
+          border: "1px solid rgba(34, 211, 238, 0.2)",
+        },
+        iconTheme: { primary: "#22d3ee", secondary: "#0f0f1a" },
+      });
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      toast.error("Could not copy email.");
+    }
+  };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -144,7 +166,7 @@ export default function Contact() {
       {/* Background glow */}
       <div className="absolute bottom-0 left-1/2 h-[300px] w-[360px] -translate-x-1/2 rounded-full bg-accent/[0.04] blur-[90px] pointer-events-none sm:h-[400px] sm:w-[600px] sm:blur-[120px]" />
 
-      <div ref={ref} className="relative mx-auto max-w-[90%] px-5 sm:px-6">
+      <div ref={ref} className="relative mx-auto w-[90%] max-w-7xl px-5 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -280,16 +302,51 @@ export default function Contact() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-4 rounded-xl border border-card-border bg-card-bg p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/20 hover:bg-accent/[0.04]"
+                  className="group flex items-center justify-between gap-4 rounded-xl border border-card-border bg-card-bg p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/20 hover:bg-accent/[0.04]"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent transition-colors group-hover:bg-accent/20">
-                    <social.icon size={20} />
+                  <div className="flex items-center gap-4 min-w-0">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent transition-colors group-hover:bg-accent/20">
+                      <social.icon size={20} />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-sm font-semibold text-foreground transition-colors group-hover:text-accent">
+                        {social.label}
+                      </div>
+                      <div className="truncate text-xs text-text-secondary">
+                        {social.handle}
+                      </div>
+                    </div>
                   </div>
-                  <div className="min-w-0 text-sm font-semibold text-foreground transition-colors group-hover:text-accent">
-                    {social.label}
-                  </div>
+                  <ArrowUpRight
+                    size={16}
+                    className="shrink-0 text-text-tertiary transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent"
+                  />
                 </a>
               ))}
+
+              <div className="flex items-center justify-between gap-4 rounded-xl border border-card-border bg-card-bg p-4">
+                <div className="flex items-center gap-4 min-w-0">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                    <MapPin size={20} />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-sm font-semibold text-foreground">
+                      Location
+                    </div>
+                    <div className="truncate text-xs text-text-secondary">
+                      Hyderabad, Telangana, India
+                    </div>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleCopyEmail}
+                  className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-accent/20 bg-accent/[0.06] px-3 py-1.5 text-xs font-medium text-accent transition-all hover:border-accent/40 hover:bg-accent/15 cursor-pointer"
+                >
+                  {copied ? <Check size={13} /> : <Copy size={13} />}
+                  <span>{copied ? "Copied" : "Copy Email"}</span>
+                </button>
+              </div>
             </div>
           </motion.div>
         </div>

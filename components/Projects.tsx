@@ -85,7 +85,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-24 sm:py-32">
-      <div ref={ref} className="mx-auto max-w-[90%] px-5 sm:px-6">
+      <div ref={ref} className="mx-auto w-[90%] max-w-7xl px-5 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -105,23 +105,33 @@ export default function Projects() {
           <div className="section-heading-line" />
         </motion.div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {projects.map((project, i) => (
             <motion.article
               key={project.title}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.16 + i * 0.1 }}
-              className="group relative flex min-h-full flex-col overflow-hidden rounded-xl border border-card-border bg-card-bg transition-all duration-300 hover:-translate-y-1 hover:border-accent/20 hover:bg-white/[0.045] hover:shadow-xl hover:shadow-accent/[0.04]"
+              transition={{ duration: 0.5, delay: 0.12 + i * 0.08 }}
+              className="group relative flex min-h-full flex-col overflow-hidden rounded-xl border border-card-border bg-card-bg transition-all duration-300 hover:-translate-y-1 hover:border-accent/25 hover:bg-white/[0.045] hover:shadow-xl hover:shadow-accent/[0.06]"
             >
               <div className="relative h-36 overflow-hidden border-b border-white/[0.06] bg-[#0d1117]">
                 <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(34,211,238,0.16),transparent_48%),linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[length:auto,28px_28px,28px_28px]" />
                 <div className="absolute left-5 top-5 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent ring-1 ring-accent/20">
                   <project.icon size={24} />
                 </div>
-                <div className="absolute bottom-4 left-5 right-5 flex items-center justify-between rounded-lg border border-white/[0.08] bg-[#0a0a0f]/70 px-3 py-2 text-xs font-mono text-text-secondary backdrop-blur">
-                  <span>{project.subtitle}</span>
-                  <span className="text-accent">preview</span>
+                <div className="absolute bottom-4 left-5 right-5 flex items-center justify-between gap-3 rounded-lg border border-white/[0.08] bg-[#0a0a0f]/75 px-3 py-2 text-xs font-mono text-text-secondary backdrop-blur">
+                  <span className="truncate">{project.subtitle}</span>
+                  {project.liveUrl && project.liveUrl !== "#" && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex shrink-0 items-center gap-1 text-accent transition-colors hover:text-cyan-300"
+                    >
+                      <span>live</span>
+                      <ExternalLink size={12} />
+                    </a>
+                  )}
                 </div>
               </div>
 

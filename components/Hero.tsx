@@ -18,16 +18,16 @@ const techStack = [
 ];
 
 const highlights = [
-  { value: "REST", label: "API design" },
-  { value: "JWT", label: "secure auth" },
-  { value: "MySQL", label: "data layer" },
+  { value: "2+ Years", label: "Industry experience" },
+  { value: "8+ Shipped", label: "Live client platforms" },
+  { value: "End-to-End", label: "Architecture to delivery" },
 ];
 
 const codeLines = [
-  "const developer = 'Anil Kumar';",
-  "build(api).with(NestJS);",
-  "ship(ui).with(React);",
-  "optimize('performance');",
+  "const engineer = 'Anil Kumar';",
+  "architect('Scalable microservices & APIs');",
+  "design('Responsive, pixel-perfect UI');",
+  "deploy('Cloud-ready production systems');",
 ];
 
 export default function Hero() {
@@ -49,7 +49,7 @@ export default function Hero() {
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0f] to-transparent" />
       </div>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[90%] items-center gap-12 px-5 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(440px,520px)] lg:gap-10 xl:gap-14">
+      <div className="relative z-10 mx-auto grid w-[90%] max-w-7xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(440px,520px)] lg:gap-10 xl:gap-14">
         <div className="text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -62,7 +62,7 @@ export default function Hero() {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
             <span className="text-xs font-medium tracking-wide text-accent">
-              Open to opportunities
+              Full Stack Developer @ HanviTec
             </span>
           </motion.div>
 
@@ -85,7 +85,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.22 }}
             className="mx-auto mt-5 max-w-[22rem] text-sm leading-relaxed text-text-secondary sm:mt-6 sm:max-w-2xl sm:text-lg lg:mx-0"
           >
-            I build reliable backend systems, secure APIs, and polished React
+            I build scalable backend architectures, secure APIs, and responsive
             interfaces that feel fast, clear, and production-ready.
           </motion.p>
 
@@ -149,7 +149,7 @@ export default function Hero() {
                 <span className="h-3 w-3 rounded-full bg-yellow-300/80" />
                 <span className="h-3 w-3 rounded-full bg-emerald-400/80" />
               </div>
-              <span className="text-xs font-medium text-text-tertiary">portfolio.ts</span>
+              <span className="text-xs font-medium text-text-tertiary">engineer.ts</span>
             </div>
             <div className="space-y-3 p-6 font-mono text-sm">
               {codeLines.map((line, index) => (
@@ -171,7 +171,7 @@ export default function Hero() {
                   <Server size={14} /> Backend focus
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-                  NestJS APIs, auth flows, and database-backed services.
+                  High-throughput microservices, data modeling, and secure auth.
                 </p>
               </div>
               <div className="p-5">
@@ -179,7 +179,7 @@ export default function Hero() {
                   <Sparkles size={14} /> UI polish
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-                  Responsive React screens with calm interactions.
+                  Fluid user interfaces, responsive design systems, and fast load times.
                 </p>
               </div>
             </div>

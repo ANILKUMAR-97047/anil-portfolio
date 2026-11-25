@@ -149,7 +149,7 @@ export default function Experience() {
 
   return (
     <section id="experience" className="py-24 sm:py-32">
-      <div ref={ref} className="mx-auto max-w-[90%] px-5 sm:px-6">
+      <div ref={ref} className="mx-auto w-[90%] max-w-7xl px-5 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -195,7 +195,7 @@ export default function Experience() {
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
                   <div>
                     <h3 className="flex items-start gap-2 text-lg font-bold text-foreground sm:text-xl">
-                      <Briefcase size={18} className="text-accent shrink-0" />
+                      <Briefcase size={18} className="mt-1 text-accent shrink-0" />
                       {exp.role}
                     </h3>
                     <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-sm text-text-secondary">
@@ -213,36 +213,10 @@ export default function Experience() {
                       )}
                     </div>
                   </div>
-                  <div className="flex flex-col sm:items-end gap-1.5 shrink-0">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/[0.06] px-3 py-1 text-xs font-medium text-accent whitespace-nowrap self-start sm:self-auto">
-                      <Calendar size={12} />
-                      {exp.period}
-                    </span>
-                    {exp.links ? (
-                      exp.links.map((link) => (
-                        <a
-                          key={link.url}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-xs font-medium text-accent/80 hover:text-accent transition-colors self-start sm:self-auto group/link"
-                        >
-                          <span className="group-hover/link:underline">{link.label}</span>
-                          <ExternalLink size={12} className="shrink-0" />
-                        </a>
-                      ))
-                    ) : exp.link ? (
-                      <a
-                        href={exp.link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-medium text-accent/80 hover:text-accent transition-colors self-start sm:self-auto group/link"
-                      >
-                        <span className="group-hover/link:underline">{exp.link.label}</span>
-                        <ExternalLink size={12} className="shrink-0" />
-                      </a>
-                    ) : null}
-                  </div>
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/[0.06] px-3 py-1 text-xs font-medium text-accent whitespace-nowrap self-start shrink-0">
+                    <Calendar size={12} />
+                    {exp.period}
+                  </span>
                 </div>
 
                 <ul className="space-y-2.5">
@@ -256,6 +230,23 @@ export default function Experience() {
                     </li>
                   ))}
                 </ul>
+
+                {(exp.links || exp.link) && (
+                  <div className="mt-5 flex flex-wrap items-center gap-2">
+                    {(exp.links ?? (exp.link ? [exp.link] : [])).map((item) => (
+                      <a
+                        key={item.url}
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-accent/25 bg-accent/[0.08] px-3 py-1.5 text-xs font-medium text-accent transition-all hover:border-accent/40 hover:bg-accent/15"
+                      >
+                        <span>{item.label}</span>
+                        <ExternalLink size={12} className="shrink-0" />
+                      </a>
+                    ))}
+                  </div>
+                )}
 
                 {exp.skills && exp.skills.length > 0 && (
                   <div className="mt-5 flex flex-wrap gap-2 pt-4 border-t border-card-border/60">
