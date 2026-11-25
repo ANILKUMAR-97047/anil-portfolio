@@ -5,9 +5,9 @@ import { useRef } from "react";
 
 const stats = [
   { value: "2+", label: "Years of Experience" },
-  { value: "Full Stack", label: "Specialization" },
-  { value: "Nest & Next", label: "Core Stack Focus" },
-  { value: "JWT & APIs", label: "Auth & Security Focus" },
+  { value: "8+", label: "Live Platforms Shipped" },
+  { value: "4", label: "Companies Worked With" },
+  { value: "India", label: "Based in Hyderabad" },
 ];
 
 export default function About() {
@@ -45,12 +45,17 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-text-secondary leading-relaxed text-base sm:text-lg">
-              I&apos;m a Full Stack Developer with experience since October 2024,
-              currently building scalable systems at HanviTec Solutions Pvt Ltd.
-              I specialize in Next.js, TypeScript, Node.js, and NestJS,
-              designing robust architectures with PostgreSQL and MongoDB, and
-              delivering fast, responsive web applications from concept to
-              deployment.
+              I&apos;m a Full Stack Developer based in Hyderabad, India, with
+              professional experience since October 2024. I&apos;ve worked
+              across four companies — from an on-site internship to full-time
+              roles — shipping 8+ live platforms for clients in fintech,
+              insurance, e-commerce, and education.
+            </p>
+            <p className="mt-5 text-text-secondary leading-relaxed text-base sm:text-lg">
+              I specialize in NestJS and Next.js, designing robust backend
+              architectures with PostgreSQL, MongoDB, and Redis, and delivering
+              polished front-end interfaces with Tailwind CSS and GSAP — always
+              end-to-end, always production-ready.
             </p>
           </motion.div>
 
