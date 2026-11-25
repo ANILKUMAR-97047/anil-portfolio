@@ -19,7 +19,7 @@ const techStack = [
 
 const highlights = [
   { value: "2+ Years", label: "Industry experience" },
-  { value: "8+ Shipped", label: "Live client platforms" },
+  { value: "10+ Shipped", label: "Live platforms & apps" },
   { value: "End-to-End", label: "Architecture to delivery" },
 ];
 

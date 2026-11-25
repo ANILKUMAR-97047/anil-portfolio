@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 const stats = [
   { value: "2+", label: "Years of Experience" },
-  { value: "8+", label: "Live Platforms Shipped" },
+  { value: "10+", label: "Live Platforms Shipped" },
   { value: "4", label: "Companies Worked With" },
   { value: "India", label: "Based in Hyderabad" },
 ];
@@ -48,8 +48,8 @@ export default function About() {
               I&apos;m a Full Stack Developer based in Hyderabad, India, with
               professional experience since October 2024. I&apos;ve worked
               across four companies — from an on-site internship to full-time
-              roles — shipping 8+ live platforms for clients in fintech,
-              insurance, e-commerce, and education.
+              roles — shipping 10+ live platforms for clients and personal
+              products across fintech, insurance, manufacturing, and education.
             </p>
             <p className="mt-5 text-text-secondary leading-relaxed text-base sm:text-lg">
               I specialize in NestJS and Next.js, designing robust backend

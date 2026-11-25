@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Layers, Activity, Server, Compass, Zap, ShieldCheck, GraduationCap, Landmark } from "lucide-react";
+import { ExternalLink, Layers, Activity, Server, Compass, Zap, ShieldCheck, GraduationCap, Landmark, Sparkles, Building2 } from "lucide-react";
 
 const projects = [
   {
@@ -76,6 +76,24 @@ const projects = [
     tech: ["React.js", "Tailwind CSS", "HTML", "CSS"],
     icon: Layers,
     liveUrl: "https://asian-film-academy.netlify.app/",
+  },
+  {
+    title: "AI Resume Analyzer",
+    subtitle: "AI-powered resume insights & scoring",
+    description:
+      "Upload a PDF or paste your resume to receive instant AI insights covering strengths, weaknesses, missing skills, and actionable suggestions to improve.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "AI Integration", "PDF Parsing"],
+    icon: Sparkles,
+    liveUrl: "https://anil-ai-resume-analyzer.vercel.app/",
+  },
+  {
+    title: "Siri Windows",
+    subtitle: "UPVC & Aluminium showcase + owner admin",
+    description:
+      "Business showcase website for a UPVC and Aluminium windows and doors manufacturer, featuring customer inquiry workflows and a dedicated owner admin dashboard to manage operations.",
+    tech: ["Next.js", "React.js", "Tailwind CSS", "Admin Dashboard", "Vercel"],
+    icon: Building2,
+    liveUrl: "https://siri-windows.vercel.app/",
   },
 ];
 

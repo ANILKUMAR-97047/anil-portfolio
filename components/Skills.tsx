@@ -36,10 +36,10 @@ const skillGroups = [
     skills: ["JWT Authentication", "Protected Routes", "API Authorization"],
   },
   {
-    title: "DevOps & Tools",
+    title: "DevOps & Cloud",
     icon: Wrench,
     accent: "from-zinc-200/15 to-cyan-300/10",
-    skills: ["Docker", "Git", "GitHub", "Postman", "Bootstrap"],
+    skills: ["AWS", "Vercel", "Netlify", "Docker", "Git", "GitHub", "Postman", "Bootstrap"],
   },
 ];
 
