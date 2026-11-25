@@ -9,19 +9,19 @@ const skillGroups = [
     title: "Frontend",
     icon: Code2,
     accent: "from-cyan-300/20 to-emerald-300/10",
-    skills: ["React.js", "Next.js", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS"],
+    skills: ["Next.js", "React.js", "TypeScript", "JavaScript", "Tailwind CSS", "GSAP", "HTML/CSS"],
   },
   {
     title: "Backend",
     icon: ServerCog,
     accent: "from-sky-300/20 to-cyan-300/10",
-    skills: ["Node.js", "NestJS", "Express.js", "REST APIs", "Strapi"],
+    skills: ["Node.js", "NestJS", "Microservices", "Express.js", "Socket.io", "REST APIs", "Swagger API", "Strapi.js"],
   },
   {
-    title: "Data",
+    title: "Data & Cloud",
     icon: Database,
     accent: "from-teal-300/20 to-blue-300/10",
-    skills: ["MySQL", "SQL", "MongoDB", "Schema Design"],
+    skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Supabase", "Schema Design"],
   },
   {
     title: "Security",
@@ -30,10 +30,10 @@ const skillGroups = [
     skills: ["JWT Authentication", "Protected Routes", "API Authorization"],
   },
   {
-    title: "Tools",
+    title: "DevOps & Tools",
     icon: Wrench,
     accent: "from-zinc-200/15 to-cyan-300/10",
-    skills: ["Git", "GitHub", "Postman", "Bootstrap"],
+    skills: ["Docker", "Git", "GitHub", "Postman", "Bootstrap"],
   },
 ];
 

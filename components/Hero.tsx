@@ -9,10 +9,12 @@ const techStack = [
   "TYPESCRIPT",
   "NODE.JS",
   "NEST.JS",
-  "EXPRESS.JS",
-  "MYSQL",
+  "POSTGRESQL",
   "MONGO DB",
-  "JWT",
+  "REDIS",
+  "DOCKER",
+  "SOCKET.IO",
+  "TAILWIND CSS",
 ];
 
 const highlights = [

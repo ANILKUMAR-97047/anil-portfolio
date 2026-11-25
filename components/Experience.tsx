@@ -2,20 +2,143 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Briefcase, MapPin, Calendar } from "lucide-react";
+import { Briefcase, MapPin, Calendar, ExternalLink } from "lucide-react";
 
 const experiences = [
   {
-    role: "Backend Developer Intern",
-    company: "Craftnotion Pvt. Ltd",
-    location: "Hyderabad, Telangana",
-    period: "Jun 2025 – Dec 2025",
+    role: "Full Stack Developer",
+    company: "HanviTec Solutions Pvt Ltd",
+    location: "Hyderabad, Telangana, India",
+    type: "Full-time · On-site",
+    period: "Dec 2025 – Present",
+    links: [
+      {
+        label: "View Kosha Platform",
+        url: "https://banking-application-eta.vercel.app/",
+      },
+      {
+        label: "View Yvity Platform",
+        url: "https://www.yvity.com/",
+      },
+      {
+        label: "View Career Bridge IT",
+        url: "https://www.careerbridgeit.com/",
+      },
+    ],
     bullets: [
-      "Developed and maintained RESTful APIs using Node.js and NestJS",
-      "Designed and optimized MySQL database schemas and queries",
-      "Worked on Strapi CMS projects for content management and API customization",
-      "Implemented authentication and authorization using JWT",
-      "Integrated backend APIs with frontend applications",
+      "Architecting and delivering full-stack solutions end-to-end for production platforms including Kosha (intelligent corporate lending ecosystem for MSMEs, banks, and NBFCs), Yvity, and Career Bridge IT.",
+      "Designing and managing high-performance databases with PostgreSQL, Supabase, and MongoDB.",
+      "Implementing real-time communication systems and high-throughput caching strategies with Redis.",
+      "Documenting modular REST APIs with Swagger/OpenAPI and containerizing microservices using Docker for seamless deployments.",
+      "Building responsive interfaces with Tailwind CSS and creating fluid, engaging animations using GSAP.",
+    ],
+    skills: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "NestJS",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "Docker",
+      "Socket.io",
+      "Supabase",
+      "Swagger API",
+      "GSAP",
+    ],
+  },
+  {
+    role: "Jr. Backend Developer",
+    company: "Craftnotion",
+    location: "Hyderabad, Telangana, India",
+    type: "Full-time · On-site",
+    period: "Jun 2025 – Dec 2025",
+    links: [
+      {
+        label: "View Tirupathi Electrodes",
+        url: "https://tirupathielectrodes.com/",
+      },
+      {
+        label: "View ToonPandas Platform",
+        url: "https://toonpandas.com/",
+      },
+      {
+        label: "View DJ Tours & Travels",
+        url: "https://djtoursandtravels.com/",
+      },
+    ],
+    bullets: [
+      "Engineered backend services and RESTful APIs using NestJS and Node.js for Tirupathi Electrodes, powering product catalogs and inquiry pipelines.",
+      "Engineered backend architectures and content management systems for production platforms including ToonPandas and DJ Tours & Travels using Strapi.js.",
+      "Designed and optimized relational and NoSQL database schemas using MySQL and MongoDB for high-performance querying.",
+      "Implemented Redis caching strategies to minimize database load and accelerate API response times.",
+      "Collaborated on seamless API integration with React.js frontend interfaces and enforced secure JWT authentication.",
+    ],
+    skills: [
+      "NestJS",
+      "Node.js",
+      "TypeScript",
+      "JavaScript",
+      "Microservices",
+      "MySQL",
+      "MongoDB",
+      "Redis",
+      "Strapi.js",
+      "Swagger API",
+      "React.js",
+    ],
+  },
+  {
+    role: "Contract Web Developer",
+    company: "Star Design Institute",
+    location: "Remote",
+    type: "Contract · Remote",
+    period: "Dec 2024 – Jun 2025",
+    link: {
+      label: "View Asian Film Academy Site",
+      url: "https://asian-film-academy.netlify.app/",
+    },
+    bullets: [
+      "Engineered responsive web applications end-to-end, including the production website for Asian Film Academy.",
+      "Collaborated closely with the institute's UI/UX designers to translate Figma design systems into pixel-perfect React and Next.js interfaces.",
+      "Developed modular backend endpoints using Node.js for lead capture, student inquiries, and course information management.",
+      "Structured clean styling architectures with Tailwind CSS, HTML, and modern CSS practices for optimal performance and cross-device responsiveness.",
+    ],
+    skills: [
+      "Next.js",
+      "React.js",
+      "Tailwind CSS",
+      "Node.js",
+      "JavaScript",
+      "HTML",
+      "CSS",
+    ],
+  },
+  {
+    role: "Full Stack Developer Intern",
+    company: "Credmarg",
+    location: "Hyderabad, Telangana, India",
+    type: "Internship · On-site",
+    period: "Oct 2024 – Nov 2024",
+    link: {
+      label: "View Astroping Platform",
+      url: "https://astroping.com/",
+    },
+    bullets: [
+      "Contributed across frontend and backend development for the Astroping web platform admin dashboard.",
+      "Engineered administrative dashboard features with React.js and custom CSS for monitoring and platform management.",
+      "Implemented RESTful backend endpoints using Node.js and Express.js to process administrative actions and queries.",
+      "Designed and maintained MongoDB collections and schemas to ensure efficient data persistence and fast retrieval.",
+    ],
+    skills: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "CSS",
+      "REST APIs",
+      "JavaScript",
     ],
   },
 ];
@@ -58,9 +181,11 @@ export default function Experience() {
               className="relative pb-12 pl-6 last:pb-0 sm:pl-8"
             >
               {/* Timeline dot & line */}
-              <div className="absolute left-0 top-2 flex flex-col items-center">
+              <div className="absolute left-0 top-2 bottom-0 flex flex-col items-center">
                 <div className="relative z-10 h-4 w-4 rounded-full border-2 border-accent bg-[#0a0a0f]">
-                  <div className="absolute inset-0 rounded-full bg-accent/20 animate-ping" />
+                  {i === 0 && (
+                    <div className="absolute inset-0 rounded-full bg-accent/20 animate-ping" />
+                  )}
                 </div>
                 {i < experiences.length - 1 && <div className="timeline-line" />}
               </div>
@@ -73,7 +198,7 @@ export default function Experience() {
                       <Briefcase size={18} className="text-accent shrink-0" />
                       {exp.role}
                     </h3>
-                    <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-text-secondary">
+                    <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-sm text-text-secondary">
                       <span className="font-medium text-foreground/80">
                         {exp.company}
                       </span>
@@ -81,12 +206,43 @@ export default function Experience() {
                         <MapPin size={13} className="text-accent/60" />
                         {exp.location}
                       </span>
+                      {exp.type && (
+                        <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-xs text-text-secondary">
+                          {exp.type}
+                        </span>
+                      )}
                     </div>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/[0.06] px-3 py-1 text-xs font-medium text-accent whitespace-nowrap">
-                    <Calendar size={12} />
-                    {exp.period}
-                  </span>
+                  <div className="flex flex-col sm:items-end gap-1.5 shrink-0">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/[0.06] px-3 py-1 text-xs font-medium text-accent whitespace-nowrap self-start sm:self-auto">
+                      <Calendar size={12} />
+                      {exp.period}
+                    </span>
+                    {exp.links ? (
+                      exp.links.map((link) => (
+                        <a
+                          key={link.url}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-xs font-medium text-accent/80 hover:text-accent transition-colors self-start sm:self-auto group/link"
+                        >
+                          <span className="group-hover/link:underline">{link.label}</span>
+                          <ExternalLink size={12} className="shrink-0" />
+                        </a>
+                      ))
+                    ) : exp.link ? (
+                      <a
+                        href={exp.link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-xs font-medium text-accent/80 hover:text-accent transition-colors self-start sm:self-auto group/link"
+                      >
+                        <span className="group-hover/link:underline">{exp.link.label}</span>
+                        <ExternalLink size={12} className="shrink-0" />
+                      </a>
+                    ) : null}
+                  </div>
                 </div>
 
                 <ul className="space-y-2.5">
@@ -100,6 +256,19 @@ export default function Experience() {
                     </li>
                   ))}
                 </ul>
+
+                {exp.skills && exp.skills.length > 0 && (
+                  <div className="mt-5 flex flex-wrap gap-2 pt-4 border-t border-card-border/60">
+                    {exp.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-md border border-accent/15 bg-accent/[0.05] px-2.5 py-1 text-xs font-medium text-accent/90"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}

@@ -5,10 +5,10 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
-  { value: "6+", label: "Months of Professional Experience" },
-  { value: "3+", label: "Projects Delivered" },
-  { value: "NestJS", label: "Backend Specialization" },
-  { value: "JWT", label: "Auth & Security Focus" },
+  { value: "1.5+", label: "Years of Experience" },
+  { value: "Full Stack", label: "Specialization" },
+  { value: "Nest & Next", label: "Core Stack Focus" },
+  { value: "JWT & APIs", label: "Auth & Security Focus" },
 ];
 
 export default function About() {
@@ -46,11 +46,11 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-text-secondary leading-relaxed text-base sm:text-lg">
-              I&apos;m a Full Stack Developer with 6 months of hands-on
-              internship experience building backend systems. I specialize in
-              Node.js, NestJS, and MySQL, with strong experience in RESTful API
-              design, authentication, and Strapi CMS. I also build responsive
-              frontend interfaces using React.js and Tailwind CSS.
+              I&apos;m a Full Stack Developer currently building scalable
+              systems at HanviTec Solutions Pvt Ltd. I specialize in Next.js,
+              TypeScript, Node.js, and NestJS, designing robust architectures with
+              PostgreSQL and MongoDB, and delivering fast, responsive web
+              applications from concept to deployment.
             </p>
           </motion.div>
 

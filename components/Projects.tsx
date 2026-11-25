@@ -2,26 +2,71 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Layers, LockKeyhole, ListChecks } from "lucide-react";
-
-function GithubIcon({ size = 16 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-    </svg>
-  );
-}
+import { ExternalLink, Layers, LockKeyhole, ListChecks, Activity, Server, Compass, Zap, ShieldCheck, GraduationCap, Landmark } from "lucide-react";
 
 const projects = [
   {
-    title: "Jobby App",
-    subtitle: "Authenticated job search",
+    title: "Kosha",
+    subtitle: "Intelligent corporate lending & MSME loans",
     description:
-      "Job search application with JWT authentication, protected routes, REST API integration, and persistent login state.",
-    tech: ["React.js", "JavaScript", "Bootstrap", "REST APIs", "JWT"],
-    icon: LockKeyhole,
-    liveUrl: "#",
-    repoUrl: "#",
+      "Intelligent corporate lending platform streamlining MSME loan origination between businesses, banks, NBFCs, and valuation agencies from application to disbursement.",
+    tech: ["Next.js", "NestJS", "Node.js", "Tailwind CSS", "Supabase", "TypeScript"],
+    icon: Landmark,
+    liveUrl: "https://banking-application-eta.vercel.app/",
+  },
+  {
+    title: "Yvity",
+    subtitle: "Insurance policy & advisor platform",
+    description:
+      "Full-stack insurance management platform connecting clients and advisors, built with Next.js, Tailwind CSS, and Supabase for seamless policy tracking and database operations.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"],
+    icon: ShieldCheck,
+    liveUrl: "https://www.yvity.com/",
+  },
+  {
+    title: "Career Bridge IT",
+    subtitle: "IT training institute & course portal",
+    description:
+      "Full-stack web application for an IT training institute, engineered with interactive course interfaces, student inquiry workflows, and backend endpoints for curriculum management.",
+    tech: ["Next.js", "React.js", "Node.js", "Tailwind CSS", "MongoDB", "REST APIs"],
+    icon: GraduationCap,
+    liveUrl: "https://www.careerbridgeit.com/",
+  },
+  {
+    title: "Tirupathi Electrodes",
+    subtitle: "NestJS backend & product catalog",
+    description:
+      "Engineered backend services and RESTful APIs using NestJS and Node.js for Tirupathi Electrodes, powering industrial product catalogs, technical specifications, and inquiry handling.",
+    tech: ["NestJS", "Node.js", "TypeScript", "REST APIs", "MySQL"],
+    icon: Zap,
+    liveUrl: "https://tirupathielectrodes.com/",
+  },
+  {
+    title: "ToonPandas",
+    subtitle: "Complete backend & CMS",
+    description:
+      "Designed and engineered the complete backend architecture for ToonPandas using Strapi.js and Node.js, featuring automated content delivery, custom REST APIs, and database schemas.",
+    tech: ["Strapi.js", "Node.js", "MySQL", "REST APIs", "JWT"],
+    icon: Server,
+    liveUrl: "https://toonpandas.com/",
+  },
+  {
+    title: "DJ Tours & Travels",
+    subtitle: "Travel booking & backend CMS",
+    description:
+      "Engineered the backend services and CMS integration for DJ Tours & Travels using Strapi.js and Node.js, managing package listings, booking workflows, and inquiry endpoints.",
+    tech: ["Strapi.js", "Node.js", "MySQL", "REST APIs", "JWT"],
+    icon: Compass,
+    liveUrl: "https://djtoursandtravels.com/",
+  },
+  {
+    title: "Astroping",
+    subtitle: "Admin dashboard & platform",
+    description:
+      "Full-stack administrative dashboard and platform management system built with React and Node.js for real-time tracking, administration, and database operations.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "CSS", "REST APIs"],
+    icon: Activity,
+    liveUrl: "https://astroping.com/",
   },
   {
     title: "Asian Film Academy Website",
@@ -30,8 +75,16 @@ const projects = [
       "Responsive React and Tailwind website with reusable components, structured layouts, and clean frontend architecture.",
     tech: ["React.js", "Tailwind CSS", "HTML", "CSS"],
     icon: Layers,
+    liveUrl: "https://asian-film-academy.netlify.app/",
+  },
+  {
+    title: "Jobby App",
+    subtitle: "Authenticated job search",
+    description:
+      "Job search application with JWT authentication, protected routes, REST API integration, and persistent login state.",
+    tech: ["React.js", "JavaScript", "Bootstrap", "REST APIs", "JWT"],
+    icon: LockKeyhole,
     liveUrl: "#",
-    repoUrl: "#",
   },
   {
     title: "Todos Application",
@@ -41,7 +94,6 @@ const projects = [
     tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     icon: ListChecks,
     liveUrl: "#",
-    repoUrl: "#",
   },
 ];
 
@@ -71,7 +123,7 @@ export default function Projects() {
           <div className="section-heading-line" />
         </motion.div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
             <motion.article
               key={project.title}
@@ -98,26 +150,19 @@ export default function Projects() {
                       {project.title}
                     </h3>
                   </div>
-                  <div className="flex shrink-0 items-center gap-2">
-                    <a
-                      href={project.repoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-lg p-1.5 text-text-tertiary transition-all hover:bg-accent/10 hover:text-accent"
-                      aria-label={`GitHub repo for ${project.title}`}
-                    >
-                      <GithubIcon size={16} />
-                    </a>
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-lg p-1.5 text-text-tertiary transition-all hover:bg-accent/10 hover:text-accent"
-                      aria-label={`Live demo for ${project.title}`}
-                    >
-                      <ExternalLink size={16} />
-                    </a>
-                  </div>
+                  {project.liveUrl && project.liveUrl !== "#" && (
+                    <div className="flex shrink-0 items-center">
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-lg p-1.5 text-text-tertiary transition-all hover:bg-accent/10 hover:text-accent"
+                        aria-label={`Live demo for ${project.title}`}
+                      >
+                        <ExternalLink size={16} />
+                      </a>
+                    </div>
+                  )}
                 </div>
 
                 <p className="mb-5 flex-1 text-sm leading-relaxed text-text-secondary">
