@@ -133,7 +133,7 @@ export default function Projects() {
           <div className="section-heading-line" />
         </motion.div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
             <motion.article
               key={project.title}
@@ -142,35 +142,39 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: 0.12 + i * 0.08 }}
               className="group relative flex min-h-full flex-col overflow-hidden rounded-xl border border-card-border bg-card-bg transition-all duration-300 hover:-translate-y-1 hover:border-accent/25 hover:bg-white/[0.045] hover:shadow-xl hover:shadow-accent/[0.06]"
             >
-              <div className="relative h-44 overflow-hidden border-b border-white/[0.06] bg-[#0d1117]">
+              <div className="relative aspect-[21/10] w-full overflow-hidden border-b border-white/[0.08] bg-[#0d1117]">
                 {project.image ? (
-                  <>
-                    {/* Real screenshot */}
+                  <a
+                    href={project.liveUrl && project.liveUrl !== "#" ? project.liveUrl : undefined}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block h-full w-full"
+                    tabIndex={-1}
+                  >
                     <img
                       src={project.image}
-                      alt={`${project.title} screenshot`}
-                      className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      alt={`${project.title} hero preview`}
+                      className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
-                    {/* Dark overlay so bottom bar stays readable */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60" />
-                  </>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/50 via-transparent to-transparent opacity-40 transition-opacity group-hover:opacity-10" />
+                  </a>
                 ) : (
                   <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(34,211,238,0.16),transparent_48%),linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[length:auto,28px_28px,28px_28px]" />
                 )}
-                <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between gap-3 rounded-lg border border-white/[0.12] bg-[#0a0a0f]/80 px-3 py-2 text-xs font-mono text-text-secondary backdrop-blur-sm">
-                  <span className="truncate">{project.subtitle}</span>
-                  {project.liveUrl && project.liveUrl !== "#" && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex shrink-0 items-center gap-1 text-accent transition-colors hover:text-cyan-300"
-                    >
-                      <span>live</span>
-                      <ExternalLink size={12} />
-                    </a>
-                  )}
-                </div>
+
+                {project.liveUrl && project.liveUrl !== "#" && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-[#0a0a0f]/80 px-2.5 py-1 text-[11px] font-mono font-medium text-accent backdrop-blur-md transition-all hover:border-accent hover:bg-black group-hover:border-accent/40"
+                    aria-label={`Live demo for ${project.title}`}
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
+                    <span>live</span>
+                    <ExternalLink size={11} />
+                  </a>
+                )}
               </div>
 
               <div className="flex flex-1 flex-col p-6">
@@ -179,6 +183,9 @@ export default function Projects() {
                     <h3 className="break-words text-lg font-bold text-foreground transition-colors group-hover:text-accent">
                       {project.title}
                     </h3>
+                    <p className="mt-1 text-xs font-mono text-accent/80">
+                      {project.subtitle}
+                    </p>
                   </div>
                   {project.liveUrl && project.liveUrl !== "#" && (
                     <div className="flex shrink-0 items-center">
