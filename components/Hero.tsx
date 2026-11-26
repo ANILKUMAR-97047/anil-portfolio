@@ -23,13 +23,6 @@ const highlights = [
   { value: "End-to-End", label: "Architecture to delivery" },
 ];
 
-const codeLines = [
-  "const engineer = 'Anil Kumar';",
-  "architect('Scalable microservices & APIs');",
-  "design('Responsive, pixel-perfect UI');",
-  "deploy('Cloud-ready production systems');",
-];
-
 export default function Hero() {
   return (
     <section
@@ -140,55 +133,61 @@ export default function Hero() {
           initial={{ opacity: 0, y: 34, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.18 }}
-          className="hidden justify-self-end lg:block lg:w-full lg:max-w-[520px]"
+          className="relative mx-auto w-full max-w-[440px] lg:max-w-[500px] justify-self-center lg:justify-self-end"
         >
-          <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0d1117]/80 shadow-2xl shadow-black/30 backdrop-blur">
-            <div className="flex items-center justify-between border-b border-white/[0.08] px-5 py-4">
+          {/* Subtle ambient cyan glow behind the card */}
+          <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-accent/25 via-cyan-500/10 to-emerald-500/10 blur-xl opacity-60 pointer-events-none" />
+
+          <div className="relative overflow-hidden rounded-2xl border border-white/[0.1] bg-[#0d1117]/90 shadow-2xl shadow-black/50 backdrop-blur-md">
+            {/* Window header */}
+            <div className="flex items-center justify-between border-b border-white/[0.08] px-5 py-3.5 bg-white/[0.02]">
               <div className="flex items-center gap-2">
                 <span className="h-3 w-3 rounded-full bg-red-400/80" />
                 <span className="h-3 w-3 rounded-full bg-yellow-300/80" />
                 <span className="h-3 w-3 rounded-full bg-emerald-400/80" />
               </div>
-              <span className="text-xs font-medium text-text-tertiary">engineer.ts</span>
+              <span className="text-xs font-mono text-text-tertiary">anil-kumar.tsx</span>
             </div>
-            <div className="space-y-3 p-6 font-mono text-sm">
-              {codeLines.map((line, index) => (
-                <motion.div
-                  key={line}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: 0.42 + index * 0.12 }}
-                  className="flex items-center gap-4"
-                >
-                  <span className="w-5 text-right text-text-tertiary">{index + 1}</span>
-                  <span className="text-zinc-300">{line}</span>
-                </motion.div>
-              ))}
+
+            {/* Photo container */}
+            <div className="relative aspect-[4/3.8] w-full overflow-hidden bg-[#0a0a0f]">
+              <img
+                src="/images/anil.jpg"
+                alt="Anil Kumar - Full Stack Developer"
+                className="h-full w-full object-cover object-[50%_15%] transition-transform duration-700 hover:scale-[1.03]"
+              />
             </div>
-            <div className="grid grid-cols-2 border-t border-white/[0.08]">
-              <div className="border-r border-white/[0.08] p-5">
-                <div className="flex items-center gap-2 text-xs font-medium text-accent">
-                  <Server size={14} /> Backend focus
+
+            {/* Core Specialization pills */}
+            <div className="grid grid-cols-2 border-t border-white/[0.08] divide-x divide-white/[0.08] bg-white/[0.01]">
+              <div className="p-4">
+                <div className="flex items-center gap-1.5 text-xs font-medium text-accent">
+                  <Server size={14} /> Backend Architecture
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-                  High-throughput microservices, data modeling, and secure auth.
+                <p className="mt-1 text-xs text-text-secondary leading-snug">
+                  NestJS, Node, Redis, PostgreSQL, Supabase
                 </p>
               </div>
-              <div className="p-5">
-                <div className="flex items-center gap-2 text-xs font-medium text-accent">
-                  <Sparkles size={14} /> UI polish
+              <div className="p-4">
+                <div className="flex items-center gap-1.5 text-xs font-medium text-accent">
+                  <Sparkles size={14} /> Frontend Systems
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-                  Fluid user interfaces, responsive design systems, and fast load times.
+                <p className="mt-1 text-xs text-text-secondary leading-snug">
+                  Next.js, TypeScript, Tailwind, GSAP
                 </p>
               </div>
             </div>
+
+            {/* Quick action link */}
             <a
               href="#projects"
-              className="group flex items-center justify-between border-t border-white/[0.08] px-5 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-white/[0.03] hover:text-accent"
+              className="group flex items-center justify-between border-t border-white/[0.08] bg-white/[0.02] px-5 py-3.5 text-xs font-semibold text-foreground transition-colors hover:bg-white/[0.05] hover:text-accent"
             >
-              View selected projects
-              <ArrowUpRight size={16} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              <span>Explore 10+ Shipped Production Platforms</span>
+              <ArrowUpRight
+                size={15}
+                className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-accent"
+              />
             </a>
           </div>
         </motion.div>
