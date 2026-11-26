@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -6,7 +6,7 @@ import { Briefcase, MapPin, Calendar, ExternalLink } from "lucide-react";
 
 const experiences = [
   {
-    role: "Full Stack Developer",
+    role: "Software Development Engineer (SDE-1) — Full Stack",
     company: "HanviTec Solutions Pvt Ltd",
     location: "Hyderabad, Telangana, India",
     type: "Full-time · On-site",
@@ -120,7 +120,7 @@ const experiences = [
     company: "Credmarg",
     location: "Hyderabad, Telangana, India",
     type: "Internship · On-site",
-    period: "Oct 2024 – Nov 2024",
+    period: "Sep 2024 – Nov 2024",
     link: {
       label: "View Astroping Platform",
       url: "https://astroping.com/",

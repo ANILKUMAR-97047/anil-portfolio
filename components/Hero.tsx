@@ -42,20 +42,20 @@ export default function Hero() {
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0f] to-transparent" />
       </div>
 
-      <div className="relative z-10 mx-auto grid w-[90%] max-w-7xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(440px,520px)] lg:gap-10 xl:gap-14">
+      <div className="relative z-10 mx-auto grid w-[92%] sm:w-[90%] max-w-7xl items-center gap-10 sm:gap-12 px-2 sm:px-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(360px,460px)] lg:gap-8 xl:gap-12">
         <div className="text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-7 inline-flex max-w-full items-center gap-2 rounded-full border border-accent/20 bg-accent/[0.06] px-4 py-1.5 sm:mb-8"
+            className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-accent/20 bg-accent/[0.06] px-3.5 py-1.5 sm:mb-8 sm:px-4"
           >
-            <span className="relative flex h-2 w-2">
+            <span className="relative flex h-2 w-2 shrink-0">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
             <span className="text-xs font-medium tracking-wide text-accent">
-              Full Stack Developer @ HanviTec
+              SDE-1 (Full Stack) @ HanviTec
             </span>
           </motion.div>
 
@@ -63,12 +63,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mx-auto max-w-full text-[1.55rem] font-bold leading-[1.08] tracking-tight min-[370px]:text-3xl sm:text-5xl md:text-6xl lg:mx-0 lg:text-[4rem] xl:text-7xl"
+            className="mx-auto max-w-full text-2xl min-[360px]:text-[1.75rem] min-[420px]:text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.4rem] 2xl:text-6xl font-bold leading-[1.14] tracking-tight lg:mx-0"
           >
             Hi, I&apos;m Anil Kumar.
             <br />
-            <span className="whitespace-nowrap bg-gradient-to-r from-accent via-cyan-200 to-accent bg-clip-text text-transparent">
-              Full Stack Developer.
+            <span className="inline-block bg-gradient-to-r from-accent via-cyan-200 to-accent bg-clip-text text-transparent break-normal">
+              Full Stack Software Engineer.
             </span>
           </motion.h1>
 
@@ -76,7 +76,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.22 }}
-            className="mx-auto mt-5 max-w-[22rem] text-sm leading-relaxed text-text-secondary sm:mt-6 sm:max-w-2xl sm:text-lg lg:mx-0"
+            className="mx-auto mt-4 max-w-[22rem] text-sm leading-relaxed text-text-secondary sm:mt-6 sm:max-w-2xl sm:text-lg lg:mx-0"
           >
             I build scalable backend architectures, secure APIs, and responsive
             interfaces that feel fast, clear, and production-ready.
@@ -86,7 +86,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.34 }}
-            className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:mt-10 sm:gap-4 lg:justify-start"
+            className="mt-7 flex flex-wrap items-center justify-center gap-3 sm:mt-10 sm:gap-4 lg:justify-start"
           >
             <a
               href="/resume.pdf"
@@ -111,17 +111,17 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.46 }}
-            className="mt-9 grid grid-cols-3 gap-3 sm:max-w-xl lg:mt-10"
+            className="mt-8 sm:mt-9 grid grid-cols-3 gap-2 sm:gap-3 sm:max-w-xl mx-auto lg:mx-0 lg:mt-10"
           >
             {highlights.map((item) => (
               <div
                 key={item.label}
-                className="rounded-lg border border-white/[0.06] bg-white/[0.03] px-3 py-3 text-left"
+                className="rounded-lg border border-white/[0.06] bg-white/[0.03] p-2.5 sm:p-3 text-left"
               >
-                <div className="text-sm font-bold text-foreground sm:text-base">
+                <div className="text-xs sm:text-sm md:text-base font-bold text-foreground">
                   {item.value}
                 </div>
-                <div className="mt-1 text-[11px] leading-snug text-text-tertiary sm:text-xs">
+                <div className="mt-0.5 sm:mt-1 text-[10px] sm:text-[11px] md:text-xs leading-snug text-text-tertiary">
                   {item.label}
                 </div>
               </div>
@@ -133,20 +133,20 @@ export default function Hero() {
           initial={{ opacity: 0, y: 34, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.18 }}
-          className="relative mx-auto w-full max-w-[440px] lg:max-w-[500px] justify-self-center lg:justify-self-end"
+          className="relative mx-auto w-full max-w-[360px] min-[420px]:max-w-[420px] lg:max-w-[460px] justify-self-center lg:justify-self-end"
         >
           {/* Subtle ambient cyan glow behind the card */}
           <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-accent/25 via-cyan-500/10 to-emerald-500/10 blur-xl opacity-60 pointer-events-none" />
 
           <div className="relative overflow-hidden rounded-2xl border border-white/[0.1] bg-[#0d1117]/90 shadow-2xl shadow-black/50 backdrop-blur-md">
             {/* Window header */}
-            <div className="flex items-center justify-between border-b border-white/[0.08] px-5 py-3.5 bg-white/[0.02]">
+            <div className="flex items-center justify-between border-b border-white/[0.08] px-4 sm:px-5 py-3 bg-white/[0.02]">
               <div className="flex items-center gap-2">
-                <span className="h-3 w-3 rounded-full bg-red-400/80" />
-                <span className="h-3 w-3 rounded-full bg-yellow-300/80" />
-                <span className="h-3 w-3 rounded-full bg-emerald-400/80" />
+                <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-red-400/80" />
+                <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-yellow-300/80" />
+                <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-emerald-400/80" />
               </div>
-              <span className="text-xs font-mono text-text-tertiary">anil-kumar.tsx</span>
+              <span className="text-[11px] sm:text-xs font-mono text-text-tertiary">anil-kumar.tsx</span>
             </div>
 
             {/* Photo container */}
@@ -159,8 +159,8 @@ export default function Hero() {
             </div>
 
             {/* Core Specialization pills */}
-            <div className="grid grid-cols-2 border-t border-white/[0.08] divide-x divide-white/[0.08] bg-white/[0.01]">
-              <div className="p-4">
+            <div className="grid grid-cols-1 min-[400px]:grid-cols-2 border-t border-white/[0.08] divide-y min-[400px]:divide-y-0 min-[400px]:divide-x divide-white/[0.08] bg-white/[0.01]">
+              <div className="p-3 sm:p-4">
                 <div className="flex items-center gap-1.5 text-xs font-medium text-accent">
                   <Server size={14} /> Backend Architecture
                 </div>
@@ -168,7 +168,7 @@ export default function Hero() {
                   NestJS, Node, Redis, PostgreSQL, Supabase
                 </p>
               </div>
-              <div className="p-4">
+              <div className="p-3 sm:p-4">
                 <div className="flex items-center gap-1.5 text-xs font-medium text-accent">
                   <Sparkles size={14} /> Frontend Systems
                 </div>
@@ -181,7 +181,7 @@ export default function Hero() {
             {/* Quick action link */}
             <a
               href="#projects"
-              className="group flex items-center justify-between border-t border-white/[0.08] bg-white/[0.02] px-5 py-3.5 text-xs font-semibold text-foreground transition-colors hover:bg-white/[0.05] hover:text-accent"
+              className="group flex items-center justify-between border-t border-white/[0.08] bg-white/[0.02] px-4 sm:px-5 py-3 sm:py-3.5 text-xs font-semibold text-foreground transition-colors hover:bg-white/[0.05] hover:text-accent"
             >
               <span>Explore 10+ Shipped Production Platforms</span>
               <ArrowUpRight

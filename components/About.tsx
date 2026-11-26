@@ -45,11 +45,9 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-text-secondary leading-relaxed text-base sm:text-lg">
-              I&apos;m a Full Stack Developer based in Hyderabad, India, with
-              professional experience since October 2024. I&apos;ve worked
-              across four companies — from an on-site internship to full-time
-              roles — shipping 10+ live platforms for clients and personal
-              products across fintech, insurance, manufacturing, and education.
+              I&apos;m a Full Stack Software Engineer (SDE-1) based in Hyderabad, India, with
+              professional experience since September 2024. Currently working at HanviTec Solutions Pvt Ltd,
+              I&apos;ve shipped 10+ live platforms across corporate lending, insurance, manufacturing, and education.
             </p>
             <p className="mt-5 text-text-secondary leading-relaxed text-base sm:text-lg">
               I specialize in NestJS and Next.js, designing robust backend
